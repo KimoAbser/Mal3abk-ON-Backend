@@ -6,7 +6,7 @@ require('dotenv').config();
 app.use(bodyParser.json());
 
 app.get('/',(req,res)=>{
-  res.status(200).json('My Api Running 🥰 ')
+  res.status(200).json('B7bk Ya Dodo 🥰 ')
 })
 //USER
 // Routes
