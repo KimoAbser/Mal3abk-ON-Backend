@@ -5,7 +5,9 @@ require('dotenv').config();
 
 app.use(bodyParser.json());
 
-
+app.get('/',(req,res)=>{
+  res.status(200).json('My Api Running 🥰 ')
+})
 //USER
 // Routes
 const userRoutes = require('./route/User'); // Import your user routes
