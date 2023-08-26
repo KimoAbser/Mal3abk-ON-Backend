@@ -6,7 +6,7 @@ require('dotenv').config();
 app.use(bodyParser.json());
 
 app.get('/',(req,res)=>{
-  res.status(200).json('B7bk Ya Dodo 🥰 ')
+  res.status(200).json('ba7bek ya makhroma 🥰 ')
 })
 //USER
 // Routes
