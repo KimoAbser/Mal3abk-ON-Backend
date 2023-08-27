@@ -41,7 +41,23 @@ getUserById: async (req, res) => {
   const userId = req.params.id;
 
   try {
-    const user = await User.findByPk(userId);
+    const user = await User.findByPk(userId,{
+      include:[
+        {
+         model: PlayerPosition,
+        },
+        {
+          model:PlayerLocation,
+        },
+        {
+          model:PlayerSkill,
+        },
+        {
+          model:UserFavoritePlayground,
+          include:Playground,
+        },
+      ]
+    });
 
     if (user) {
       res.json(user);

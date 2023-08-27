@@ -6,14 +6,14 @@ require('dotenv').config();
 app.use(bodyParser.json());
 
 app.get('/',(req,res)=>{
-  res.status(200).json('ba7bek ya makhroma 🥰 ')
+  res.status(200).json('Welcome To Mal3abk On Api 😉')
 })
 //USER
 // Routes
 const userRoutes = require('./route/User'); // Import your user routes
 
 // Use the user routes
-app.use('/users', userRoutes); // Example URL: http://localhost:3000/users
+app.use('/user', userRoutes); // Example URL: http://localhost:3000/user
 
 
 //AddingMethod
