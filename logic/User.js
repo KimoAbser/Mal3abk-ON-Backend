@@ -53,9 +53,9 @@ module.exports = {
                 secondaryPosition,
               });
               usersInfo.push(userDetails);
-              if (users.length === usersInfo.length) {
+              // if (users.length === usersInfo.length) {
                 res.status(200).json(usersInfo);
-              }
+              // }
             }).catch((error) => {
               console.error('Error', error.message);
               res.status(500).json({ error: 'Internal Server Error dealing with Position Tables' });
@@ -158,7 +158,7 @@ module.exports = {
   // PUT (update) a user by ID
   updateUserById: async (req, res) => {
     const userId = req.params.id;
-    const updatedUserFields = eq.body;r
+    const updatedUserFields = req.body;
 
     try {
       const user = await User.findByPk(userId);
