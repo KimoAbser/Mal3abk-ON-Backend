@@ -27,43 +27,38 @@ module.exports = {
           },
 
         ]
-      }).then((users) => {
+      }).then(async (users) => {
         if (!users) {
           res.status(404).json({ error: 'No Users' });
-        }
-        else {
+        } else {
           const usersInfo = [];
-
-          users.forEach((user) => {
+  
+          for (const user of users) {
             const userDetails = {
               user,
-              playerPosition: []
-            }
-
-            PlayerPosition.findAll({
-              where: { userId: user.id, },
-
-            }).then(async (playerPosition) => {
-              const primaryPosition = await Position.findByPk(playerPosition[0].primaryPositionId);
-              const secondaryPosition = await Position.findByPk(playerPosition[0].secondaryPositionId);
-
+              playerPosition: [],
+            };
+  
+            const playerPosition = await PlayerPosition.findOne({
+              where: { userId: user.id },
+            });
+  
+            if (playerPosition) {
+              const primaryPosition = await Position.findByPk(playerPosition.primaryPositionId);
+              const secondaryPosition = await Position.findByPk(playerPosition.secondaryPositionId);
+  
               userDetails.playerPosition.push({
                 primaryPosition,
                 secondaryPosition,
               });
-              usersInfo.push(userDetails);
-              if (users.length === usersInfo.length) {
-                res.status(200).json(usersInfo);
-              }
-            }).catch((error) => {
-              console.error('Error', error.message);
-              // res.status(500).json({ error: 'Internal Server Error dealing with Position Tables' });
-            });
-          });
-        };
+            }
+  
+            usersInfo.push(userDetails);
+          }
+  
+          res.status(200).json(usersInfo);
+        }
       });
-      // console.log('Retrieved users:', users); // Add this line for logging
-      // res.json(users);
     } catch (error) {
       console.error('Error:', error.message);
       res.status(500).json({ error: 'Internal server error' });
@@ -95,7 +90,7 @@ module.exports = {
           playerPosition: []
         }
 
-        PlayerPosition.findAll({
+        PlayerPosition.findOne({
           where: { userId: user.id, },
 
         }).then(async (playerPosition) => {
