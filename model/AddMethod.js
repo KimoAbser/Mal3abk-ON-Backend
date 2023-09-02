@@ -1,5 +1,6 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../sequelize'); // Import the Sequelize instance
+const JoinBooking = require('./JoinBooking');
 
 class AddMethod extends Model { }
 

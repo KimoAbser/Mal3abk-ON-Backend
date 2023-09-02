@@ -2,6 +2,9 @@ const Booking = require('../model/Booking'); // Import the Booking model
 const Playground = require('../model/Playground'); // Import your Playground and Booking models
 const JoinBooking = require('../model/JoinBooking'); // Import your Playground and Booking models
 const User = require('../model/User'); // Import your Playground and Booking models
+const { Sequelize } = require('sequelize');
+const AddMethod = require('../model/AddMethod');
+
 
 
 module.exports = {
@@ -13,7 +16,7 @@ module.exports = {
         include: [
           {
             model: JoinBooking,
-            include: User, // This includes the associated users through JoinBooking
+            include: [User, AddMethod,]
           },
         ],
       });
@@ -36,11 +39,11 @@ module.exports = {
         include: [
           {
             model: JoinBooking,
-            include: User, // This includes the associated users through JoinBooking
-          },
+            include: [User, AddMethod,]
+          }
         ],
       });
-  
+
       if (!booking) {
         return res.status(404).json({ error: 'Invalid Booking' });
       }
@@ -119,27 +122,36 @@ module.exports = {
   },
 
   getAvailableTimes: async (req, res) => {
-    const playgroundId = req.params.playgroundId;
-    var { startDate, endDate } = req.params.startDate;
+    const playgroundId = req.body.playgroundId;
+
+    const startDate = new Date(req.body.date);
+    const endDate = new Date(req.body.date);
+
+    var startTime = req.body.startTime;
+    const [startHours, minutes] = startTime.split(':').map(Number);
+    startDate.setHours(startHours + 3, minutes);
+    console.log(startDate);
+    var endTime = req.body.endTime;
+    const [endHours, min] = endTime.split(':').map(Number);
+
+    endDate.setHours(endHours + 3, min);
+    console.log(startDate, endDate);
     try {
 
-      const playground = await Playground.findByPk(playgroundId);
-      // const openingTime = playground.openingTime; // Replace with your actual attribute
-      // const closingTime = playground.closingTime; // Replace with your actual attribute
-      // Query the database to get bookings for the specific playground
-      //  startDate.setHours(playground.openingTime.getHours(),0,0);
-      startDate.setHours(playground.openingTime);
-      endDate.setHours(playground.closingTime);
+      // const playground = await Playground.findByPk(playgroundId);
+
+
       const bookings = await Booking.findAll({
         where: {
-          playgroundid: playgroundId,
+          playgroundId: playgroundId,
           startDate: {
             [Sequelize.Op.gte]: startDate,
-            [Sequelize.Op.lt]: endDate,
+            // [Sequelize.Op.lt]: endDate,
           },
-          order: [['startdate', 'ASC']],
         },
+        order: [['startDate', 'ASC']],
       });
+      console.log(bookings);
       const availableTimes = await calculateAvailableTimes(startDate, endDate, bookings);
       res.json(availableTimes);
     } catch (err) {
@@ -154,7 +166,7 @@ function calculateAvailableTimes(openingTime, closingTime, bookings) {
   for (const booking of bookings) {
     if (openingTime <= booking.startdate) {
 
-      availableTimes.push({ start: openingTime.getHours(), end: booking.startdate.getHours(), period: (booking.startdate.getHours() - openingTime.getHours()) });
+      availableTimes.push({ start: openingTime.getHours(), end: booking.startDate.getHours(), period: (booking.startDate.getHours() - openingTime.getHours()) });
     }
     openingTime.setTime(booking.startdate.getTime());
   }

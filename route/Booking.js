@@ -18,6 +18,6 @@ router.put('/:id', updateBookingById);
 router.delete('/:id', deleteBookingById);
 
 // get Available hours
-router.get('/getAvailableTimes', getAvailableTimes);
+router.get('/get/availableTimes', getAvailableTimes);
 
 module.exports =router;

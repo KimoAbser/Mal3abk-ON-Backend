@@ -10,6 +10,8 @@ const UserFavoritePlayground = require('./UserFavoritePlayground');
 // const Booking = require('./Booking');
 const JoinBooking = require('./JoinBooking');
 const Playground = require('./Playground');
+const Position = require('./Position');
+const AddMethod = require('./AddMethod');
 
 class User extends Model { }
 
@@ -69,7 +71,13 @@ User.init(
 );
 User.hasOne(PlayerLocation);
 
-User.hasMany(PlayerPosition);
+
+User.hasOne(PlayerPosition);
+// Position.belongsTo(PlayerPosition);
+JoinBooking.belongsTo(AddMethod);
+AddMethod.hasMany(JoinBooking);
+User.hasMany(JoinBooking);
+JoinBooking.belongsTo(User);
 User.hasMany(PlayerSkill);
 Skill.hasMany(PlayerSkill);
 PlayerSkill.belongsTo(User);
