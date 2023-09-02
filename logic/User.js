@@ -32,30 +32,30 @@ module.exports = {
           res.status(404).json({ error: 'No Users' });
         } else {
           const usersInfo = [];
-  
+
           for (const user of users) {
             const userDetails = {
               user,
               playerPosition: [],
             };
-  
+
             const playerPosition = await PlayerPosition.findOne({
               where: { userId: user.id },
             });
-  
+
             if (playerPosition) {
               const primaryPosition = await Position.findByPk(playerPosition.primaryPositionId);
               const secondaryPosition = await Position.findByPk(playerPosition.secondaryPositionId);
-  
+
               userDetails.playerPosition.push({
                 primaryPosition,
                 secondaryPosition,
               });
             }
-  
+
             usersInfo.push(userDetails);
           }
-  
+
           res.status(200).json(usersInfo);
         }
       });
@@ -84,37 +84,32 @@ module.exports = {
             include: Playground,
           },
         ]
-      }).then((user) => {
+      }).then(async (user) => {
         const userDetails = {
           user,
           playerPosition: []
         }
 
-        PlayerPosition.findOne({
-          where: { userId: user.id, },
+        const playerPosition = await PlayerPosition.findOne({
+          where: { userId: user.id },
+        });
 
-        }).then(async (playerPosition) => {
-          const primaryPosition = await Position.findByPk(playerPosition[0].primaryPositionId);
-          const secondaryPosition = await Position.findByPk(playerPosition[0].secondaryPositionId);
+        if (playerPosition) {
+          const primaryPosition = await Position.findByPk(playerPosition.primaryPositionId);
+          const secondaryPosition = await Position.findByPk(playerPosition.secondaryPositionId);
 
           userDetails.playerPosition.push({
             primaryPosition,
             secondaryPosition,
           });
-
           res.status(200).json(userDetails);
-
-        }).catch((error) => {
-          console.error('Error', error.message);
-          res.status(500).json({ error: 'Internal Server Error dealing with Position Tables' });
-        });
+        }
       });
     } catch (error) {
       console.error('Error:', error.message);
       res.status(500).json({ error: 'Internal server error' });
     }
   },
-
   // POST a new user
   newUser: async (req, res) => {
     try {
