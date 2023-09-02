@@ -84,11 +84,16 @@ module.exports = {
             include: Playground,
           },
         ]
-      }).then(async (user) => {
+      });
+      if (!user) {
+        res.status(404).json({ error: 'User not found' });
+      }
+      else {
+
         const userDetails = {
           user,
-          playerPosition: []
-        }
+          playerPosition: [],
+        };
 
         const playerPosition = await PlayerPosition.findOne({
           where: { userId: user.id },
@@ -102,9 +107,10 @@ module.exports = {
             primaryPosition,
             secondaryPosition,
           });
-          res.status(200).json(userDetails);
         }
-      });
+
+        res.status(200).json(userDetails);
+      }
     } catch (error) {
       console.error('Error:', error.message);
       res.status(500).json({ error: 'Internal server error' });
