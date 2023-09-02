@@ -57,7 +57,7 @@ module.exports = {
               }
             }).catch((error) => {
               console.error('Error', error.message);
-              res.status(500).json({ error: 'Internal Server Error dealing with Position Tables' });
+              // res.status(500).json({ error: 'Internal Server Error dealing with Position Tables' });
             });
           });
         };
