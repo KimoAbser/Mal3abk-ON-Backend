@@ -44,7 +44,6 @@ module.exports = {
               where: { userId: user.id, },
 
             }).then(async (playerPosition) => {
-              console.log(Position.findByPk(playerPosition[0].primaryPositionId));
               const primaryPosition = await Position.findByPk(playerPosition[0].primaryPositionId);
               const secondaryPosition = await Position.findByPk(playerPosition[0].secondaryPositionId);
 
@@ -100,7 +99,6 @@ module.exports = {
           where: { userId: user.id, },
 
         }).then(async (playerPosition) => {
-          console.log(Position.findByPk(playerPosition[0].primaryPositionId));
           const primaryPosition = await Position.findByPk(playerPosition[0].primaryPositionId);
           const secondaryPosition = await Position.findByPk(playerPosition[0].secondaryPositionId);
 
