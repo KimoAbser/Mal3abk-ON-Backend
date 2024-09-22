@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: testserver
-        image: kimoabser/testcd:latest
+        image: kimoabser/testcd:__IMAGE_TAG__
         ports:
         - containerPort: 3000
         
