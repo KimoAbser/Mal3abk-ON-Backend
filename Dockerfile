@@ -10,7 +10,7 @@ COPY model ./
 COPY route ./ # This will copy everything from the current directory to /usr/src/app
 
 COPY Dockerfile ./ 
-
+COPY package-lock.json ./
 COPY app.js ./
 
 COPY sequelize.js ./
