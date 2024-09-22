@@ -10,7 +10,7 @@ app.get('/',(req,res)=>{
 })
 //USER
 // Routes
-const userRoutes = require('./route/User'); // Import your user routes
+const userRoutes = require('/route/User'); // Import your user routes
 
 // Use the user routes
 app.use('/user', userRoutes); // Example URL: http://localhost:3000/user
