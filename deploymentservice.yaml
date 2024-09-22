@@ -1,0 +1,39 @@
+
+   
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment
+  labels:
+    app: test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test
+  template:
+    metadata:
+      labels:
+        app: temp
+    spec:
+      containers:
+      - name: testserver
+        image: imgname:latest
+        ports:
+        - containerPort: 3000
+        
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-service
+spec:
+  selector:
+    app: test 
+  
+  ports:
+  - port: 5000
+    targetPort: 3000
+    nodePort: 31110
