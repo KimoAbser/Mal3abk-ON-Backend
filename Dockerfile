@@ -13,7 +13,7 @@ COPY Dockerfile ./
 
 COPY app.js ./
 
-COPY sequelize ./
+COPY sequelize.js ./
 
 COPY deploymentservice.yaml ./ 
 RUN npm install
