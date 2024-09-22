@@ -31,7 +31,8 @@ metadata:
 spec:
   selector:
     app: test 
-  
+    
+  type: NodePort
   ports:
   - port: 5000
     targetPort: 3000
