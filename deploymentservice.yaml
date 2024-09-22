@@ -1,5 +1,4 @@
 
-   
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: temp
+        app: test
     spec:
       containers:
       - name: testserver
