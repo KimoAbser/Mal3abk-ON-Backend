@@ -9,7 +9,7 @@ const PlayerPosition = require('./model/PlayerPosition');
 const PlayerSkill = require('./model/PlayerSkill');
 const Skill = require('./model/Skills');
 const JoinBooking = require('./model/JoinBooking');
-const UserFavoritePlayground = require('./modelsUserFavoritePlayground');
+const UserFavoritePlayground = require('./model/UserFavoritePlayground');
 const Playground = require('./model/Playground');
 const AddMethod = require('./model/AddMethod');
 
