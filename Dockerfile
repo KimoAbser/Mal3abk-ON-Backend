@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:latest AS app
 
 WORKDIR /usr/src/app
 
@@ -6,25 +6,26 @@ COPY . ./
 
 
 # Install PostgreSQL
-RUN apt-get update && \
-    apt-get install -y postgresql postgresql-contrib
-
-# Set environment variables for PostgreSQL
-ENV PGUSER=postgres
-ENV PGPASSWORD=postgres
-ENV PGHOST=localhost
-ENV PGDATABASE=mal3abk_on
-
-
-
-# Start PostgreSQL and create the database
-RUN service postgresql start && \
-    sleep 5 && \
-    psql -U postgres -P postgres -c "CREATE DATABASE mal3abk_on;"
+RUN apt-get update
 
 RUN npm install
 
 # Expose the necessary ports
 EXPOSE 3000
-EXPOSE 5432
+
 CMD ["node","app.js"]
+
+
+# PostgreSQL setup
+FROM postgres:latest AS db
+
+# Set environment variables
+ENV PGUSER=postgres
+ENV PGPASSWORD=postgres
+ENV PGHOST=db-service
+ENV PGDATABASE=mal3abk_on
+
+FROM app
+
+# Start PostgreSQL in the background and the app in the foreground
+CMD ["sh", "-c", "service postgresql start && node app.js"]
