@@ -12,7 +12,7 @@ RUN apt-get update && \
 # Set environment variables for PostgreSQL
 ENV PGUSER=postgres
 ENV PGPASSWORD=admin
-ENV PGHOST=http://localhost:5432
+ENV PGHOST=localhost
 ENV PGDATABASE=mal3abk_on
 
 
