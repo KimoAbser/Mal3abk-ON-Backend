@@ -19,8 +19,9 @@ ENV PGDATABASE=mal3abk_on
 
 # Start PostgreSQL and create the database
 RUN service postgresql start && \
-  psql -U postgres -c "CREATE DATABASE mal3abk_on;" \
-  psql -U postgres -c "ALTER USER postgres PASSWORD 'admin';"
+    sleep 5 && \  # Short delay for PostgreSQL initialization
+    psql -U postgres -c "CREATE DATABASE mal3abk_on;" && \
+    psql -U postgres -c "ALTER USER postgres PASSWORD 'admin';"
 
 RUN npm install
 
