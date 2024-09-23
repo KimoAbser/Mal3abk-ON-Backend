@@ -11,7 +11,7 @@ RUN apt-get update && \
 
 # Set environment variables for PostgreSQL
 ENV PGUSER=postgres
-ENV PGPASSWORD=admin
+ENV PGPASSWORD=postgres
 ENV PGHOST=localhost
 ENV PGDATABASE=mal3abk_on
 
@@ -20,8 +20,7 @@ ENV PGDATABASE=mal3abk_on
 # Start PostgreSQL and create the database
 RUN service postgresql start && \
     sleep 5 && \
-    psql -U postgres -c "CREATE DATABASE mal3abk_on;" && \
-    psql -U postgres -c "ALTER USER postgres PASSWORD 'admin';"
+    psql -U postgres -c "CREATE DATABASE mal3abk_on;"
 
 RUN npm install
 
