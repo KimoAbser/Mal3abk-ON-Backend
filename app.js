@@ -4,14 +4,14 @@ const app = express();
 require('dotenv').config();
 // Import your models
 const User = require('./models/User');
-const PlayerLocation = require('./models/PlayerLocation');
-const PlayerPosition = require('./models/PlayerPosition');
-const PlayerSkill = require('./models/PlayerSkill');
-const Skill = require('./models/Skills');
-const JoinBooking = require('./models/JoinBooking');
-const UserFavoritePlayground = require('./models/UserFavoritePlayground');
-const Playground = require('./models/Playground');
-const AddMethod = require('./models/AddMethod');
+const PlayerLocation = require('./model/PlayerLocation');
+const PlayerPosition = require('./model/PlayerPosition');
+const PlayerSkill = require('./model/PlayerSkill');
+const Skill = require('./model/Skills');
+const JoinBooking = require('./model/JoinBooking');
+const UserFavoritePlayground = require('./modelsUserFavoritePlayground');
+const Playground = require('./model/Playground');
+const AddMethod = require('./model/AddMethod');
 
 // Function to synchronize all models
 async function syncModels() {
