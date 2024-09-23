@@ -8,9 +8,11 @@ const PlayerLocation = require('./model/PlayerLocation');
 const PlayerPosition = require('./model/PlayerPosition');
 const PlayerSkill = require('./model/PlayerSkill');
 const Skill = require('./model/Skills');
-const JoinBooking = require('./model/JoinBooking');
-const UserFavoritePlayground = require('./model/UserFavoritePlayground');
+
+
 const Playground = require('./model/Playground');
+const UserFavoritePlayground = require('./model/UserFavoritePlayground');
+const JoinBooking = require('./model/JoinBooking');
 const AddMethod = require('./model/AddMethod');
 
 // Function to synchronize all models
@@ -24,9 +26,11 @@ async function syncModels() {
             Skill.sync({ force: true }),
             PlayerSkill.sync({ force: true }),
             AddMethod.sync({ force: true }),
-            JoinBooking.sync({ force: true }),
-            UserFavoritePlayground.sync({ force: true }),
             Playground.sync({ force: true }),
+            UserFavoritePlayground.sync({ force: true }),
+            JoinBooking.sync({ force: true }),
+            
+            
         ]);
 
         console.log('All models synchronized with the database.');
