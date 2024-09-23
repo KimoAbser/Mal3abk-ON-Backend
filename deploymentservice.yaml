@@ -28,7 +28,7 @@ spec:
         - name: PGPASSWORD
           value: "admin"
         - name: PGHOST
-          value: "http://localhost:5432"
+          value: "localhost"
         
 ---
 
