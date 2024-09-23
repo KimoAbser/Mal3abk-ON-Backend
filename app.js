@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 require('dotenv').config();
 // Import your models
-const User = require('./models/User');
+const User = require('./model/User');
 const PlayerLocation = require('./model/PlayerLocation');
 const PlayerPosition = require('./model/PlayerPosition');
 const PlayerSkill = require('./model/PlayerSkill');
