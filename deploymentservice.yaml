@@ -26,7 +26,7 @@ spec:
         - name: PGUSER
           value: "postgres"
         - name: PGPASSWORD
-          value: "admin"
+          value: "postgres"
         - name: PGHOST
           value: "localhost"
         
