@@ -19,7 +19,7 @@ ENV PGDATABASE=mal3abk_on
 
 # Start PostgreSQL and create the database
 RUN service postgresql start && \
-    sleep 5 && \  # Short delay for PostgreSQL initialization
+    sleep 5 && \
     psql -U postgres -c "CREATE DATABASE mal3abk_on;" && \
     psql -U postgres -c "ALTER USER postgres PASSWORD 'admin';"
 
