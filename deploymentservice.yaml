@@ -20,7 +20,15 @@ spec:
         image: kimoabser/testcd:__IMAGE_TAG__
         ports:
         - containerPort: 3000
-        
+        env:
+        - name: PGDATABASE
+          value: "mal3abk_on"
+        - name: PGUSER
+          value: "postgres"
+        - name: PGPASSWORD
+          value: "admin"
+        - name: PGHOST
+          value: "http://localhost:5432"
         
 ---
 
