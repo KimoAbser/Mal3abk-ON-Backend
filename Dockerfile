@@ -24,8 +24,4 @@ ENV PGUSER=postgres
 ENV PGPASSWORD=postgres
 ENV PGHOST=db-service
 ENV PGDATABASE=mal3abk_on
-
-FROM app
-
-# Start PostgreSQL in the background and the app in the foreground
-CMD ["sh", "-c", "service postgresql start && node app.js"]
+CMD ["sh", "-c", "service postgresql start"]
