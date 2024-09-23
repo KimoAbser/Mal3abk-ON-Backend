@@ -69,6 +69,9 @@ User.init(
   timestamps: false
 }
 );
+User.sync({ force: false }).then(() => {
+  console.log('User model synchronized with the database.');
+});
 User.hasOne(PlayerLocation);
 
 
