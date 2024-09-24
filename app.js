@@ -29,31 +29,31 @@ const JoinBooking = require('./model/JoinBooking');
 const Booking = require('./model/Booking');
 
 // Synchronize model with the database
-User.sync({ force: true }).then(() => console.log('User model synchronized.'));
-CardType.sync({ force: true }).then(() => console.log('CardType model synchronized.'));
-Bank.sync({ force: true }).then(() => console.log('Bank model synchronized.'));
-PaymentMethod.sync({ force: true }).then(() => console.log('PaymentMethod model synchronized.'));
-Payment.sync({ force: true }).then(() => console.log('Payment model synchronized.'));
+User.sync({ alter: true }).then(() => console.log('User model synchronized.'));
+Bank.sync({ alter: true }).then(() => console.log('Bank model synchronized.'));
 Card.sync({ force: true }).then(() => console.log('Card model synchronized.'));
-AddMethod.sync({ force: true }).then(() => console.log('AddMethod model synchronized.'));
-Skill.sync({ force: true }).then(() => console.log('Skill model synchronized.'));
-PlayerSkill.sync({ force: true }).then(() => console.log('PlayerSkill model synchronized.'));
-PlaygroundLocation.sync({ force: true }).then(() => console.log('PlaygroundLocation model synchronized.'));
-PlaygroundPicture.sync({ force: true }).then(() => console.log('PlaygroundPicture model synchronized.'));
-Owner.sync({ force: true }).then(() => console.log('Owner model synchronized.'));
-GroundType.sync({ force: true }).then(() => console.log('GroundType model synchronized.'));
+CardType.sync({ alter: true }).then(() => console.log('CardType model synchronized.'));
+AddMethod.sync({ alter: true }).then(() => console.log('AddMethod model synchronized.'));
+Payment.sync({ alter: true }).then(() => console.log('Payment model synchronized.'));
+PaymentMethod.sync({ alter: true }).then(() => console.log('PaymentMethod model synchronized.'));
+Skill.sync({ alter: true }).then(() => console.log('Skill model synchronized.'));
+PlayerSkill.sync({ alter: true }).then(() => console.log('PlayerSkill model synchronized.'));
+PlaygroundLocation.sync({ alter: true }).then(() => console.log('PlaygroundLocation model synchronized.'));
+PlaygroundPicture.sync({ alter: true }).then(() => console.log('PlaygroundPicture model synchronized.'));
+Owner.sync({ alter: true }).then(() => console.log('Owner model synchronized.'));
+GroundType.sync({ alter: true }).then(() => console.log('GroundType model synchronized.'));
 City.sync({ force: true }).then(() => console.log('City model synchronized.'));
 Government.sync({ force: true }).then(() => console.log('Government model synchronized.'));
-BallType.sync({ force: true }).then(() => console.log('BallType model synchronized.'));
-Playground.sync({ force: true }).then(() => console.log('Playground model synchronized.'));
-Position.sync({ force: true }).then(() => console.log('Position model synchronized.'));
-PlayerPosition.sync({ force: true }).then(() => console.log('PlayerPosition model synchronized.'));
+BallType.sync({ alter: true }).then(() => console.log('BallType model synchronized.'));
+Playground.sync({ alter: true }).then(() => console.log('Playground model synchronized.'));
+Position.sync({ alter: true }).then(() => console.log('Position model synchronized.'));
+PlayerPosition.sync({ alter: true }).then(() => console.log('PlayerPosition model synchronized.'));
 PlayerLocation.sync({ force: true }).then(() => console.log('PlayerLocation model synchronized.'));
-UserFavoritePlayground.sync({ force: true }).then(() => console.log('UserFavoritePlayground model synchronized.'));
-Report.sync({ force: true }).then(() => console.log('Report model synchronized.'));
-CancellationReason.sync({ force: true }).then(() => console.log('CancellationReason model synchronized.'));
-JoinBooking.sync({ force: true }).then(() => console.log('JoinBooking model synchronized.'));
-Booking.sync({ force: true }).then(() => console.log('Booking model synchronized.'));
+UserFavoritePlayground.sync({ alter: true }).then(() => console.log('UserFavoritePlayground model synchronized.'));
+Report.sync({ alter: true }).then(() => console.log('Report model synchronized.'));
+CancellationReason.sync({ alter: true }).then(() => console.log('CancellationReason model synchronized.'));
+JoinBooking.sync({ alter: true }).then(() => console.log('JoinBooking model synchronized.'));
+Booking.sync({ alter: true }).then(() => console.log('Booking model synchronized.'));
 
 
 
