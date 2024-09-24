@@ -29,7 +29,7 @@ AddMethod.init(
 );
 
 // Synchronize the model with the database
-AddMethod.sync({ force: false }).then(() => {
+AddMethod.sync({ alter:true }).then(() => {
   console.log('AddMethod model synchronized with the database.');
 });
 
