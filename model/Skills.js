@@ -27,7 +27,7 @@ Skill.init(
 );
 
 // Synchronize the model with the database
-Skill.sync({ force: false }).then(() => {
+Skill.sync({ alter:true}).then(() => {
   console.log('Skill model synchronized with the database.');
 });
 
