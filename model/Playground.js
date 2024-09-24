@@ -81,9 +81,5 @@ Playground.init(
 // Playground.belongsToMany(User,{through:UserFavoritePlayground});
 // Playground.hasOne(PlaygroundLocation);
 // Playground.hasMany(PlaygroundPicture);
-// Synchronize the model with the database
-Playground.sync({ force: false }).then(() => {
-  console.log('PlayGround model synchronized with the database.');
-});
 
 module.exports = Playground;

@@ -25,9 +25,6 @@ Position.init(
 }
 );
 
-// Synchronize the model with the database
-Position.sync({ force: false }).then(() => {
-  console.log('Position model synchronized with the database.');
-});
+
 
 module.exports = Position;

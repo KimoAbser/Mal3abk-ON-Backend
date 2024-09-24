@@ -34,9 +34,6 @@ City.init(
 // City.belongsTo(Government, { foreignKey: 'governmentId' , as: 'Government' });
 
 ;
-// Synchronize the model with the database
-City.sync({ force: false }).then(() => {
-  console.log('City model synchronized with the database.');
-});
+
 
 module.exports = City;

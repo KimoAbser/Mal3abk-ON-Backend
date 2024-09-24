@@ -35,8 +35,5 @@ JoinBooking.init(
 // JoinBooking.hasMany(User);
 // JoinBooking.belongsToMany(User,{through: 'Booking'});
 // Synchronize the model with the database
-JoinBooking.sync({ force: false }).then(() => {
-  console.log('JoinBooking model synchronized with the database.');
-});
 
 module.exports = JoinBooking;

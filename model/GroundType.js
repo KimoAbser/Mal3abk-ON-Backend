@@ -27,9 +27,6 @@ GroundType.init(
 }
 );
 GroundType.hasMany(Playground);
-// Synchronize the model with the database
-GroundType.sync({ force: false }).then(() => {
-  console.log('GroundType model synchronized with the database.');
-});
+
 
 module.exports = GroundType;

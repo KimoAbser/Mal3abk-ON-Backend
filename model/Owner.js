@@ -43,9 +43,6 @@ Owner.init(
 }
 );
 Owner.hasOne(Playground);
-// Synchronize the model with the database
-Owner.sync({ force: false }).then(() => {
-  console.log('Owner model synchronized with the database.');
-});
+
 
 module.exports = Owner;

@@ -29,9 +29,6 @@ BallType.init(
 );
 BallType.hasMany(Playground);
 
-// Synchronize the model with the database
-BallType.sync({ alter:true }).then(() => {
-  console.log('BallType model synchronized with the database.');
-});
+
 
 module.exports = BallType;

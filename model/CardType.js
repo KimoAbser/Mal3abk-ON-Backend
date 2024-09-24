@@ -26,9 +26,5 @@ CardType.init(
 }
 );
 // CardType.hasMany(Card, { foreignKey: 'cardTypeId' });
-// Synchronize the model with the database
-CardType.sync({ force: false }).then(() => {
-  console.log('CardType model synchronized with the database.');
-});
 
 module.exports = CardType;

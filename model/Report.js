@@ -34,9 +34,5 @@ Report.init(
 }
 );
 
-// Synchronize the model with the database
-Report.sync({ force: false }).then(() => {
-  console.log('Report model synchronized with the database.');
-});
 
 module.exports = Report;

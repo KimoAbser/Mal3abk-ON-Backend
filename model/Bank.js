@@ -30,9 +30,4 @@ Bank.init(
 );
 Bank.hasMany(Card);
 
-// Synchronize the model with the database
-Bank.sync({ force: false }).then(() => {
-  console.log('Bank model synchronized with the database.');
-});
-
 module.exports = Bank;

@@ -27,9 +27,6 @@ PaymentMethod.init(
 }
 );
 PaymentMethod.hasMany(Payment);
-// Synchronize the model with the database
-PaymentMethod.sync({ force: false }).then(() => {
-  console.log('PaymentMethod model synchronized with the database.');
-});
+
 
 module.exports = PaymentMethod;

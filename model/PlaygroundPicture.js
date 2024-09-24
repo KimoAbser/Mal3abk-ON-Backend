@@ -24,9 +24,5 @@ PlaygroundPicture.init(
 }
 );
 
-// Synchronize the model with the database
-PlaygroundPicture.sync({ force: false }).then(() => {
-  console.log('PlayGroundPicture model synchronized with the database.');
-});
 
 module.exports = PlaygroundPicture;

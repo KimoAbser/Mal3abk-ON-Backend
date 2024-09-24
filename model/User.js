@@ -90,9 +90,6 @@ User.hasMany(UserFavoritePlayground);
 Playground.hasMany(UserFavoritePlayground);
 UserFavoritePlayground.belongsTo(User);
 UserFavoritePlayground.belongsTo(Playground);
-// Synchronize the model with the database
-User.sync({ force: false }).then(() => {
-  console.log('User model synchronized with the database.');
-});
+
 
 module.exports = User;

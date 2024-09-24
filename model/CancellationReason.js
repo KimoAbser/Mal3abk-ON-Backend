@@ -26,9 +26,6 @@ CancellationReason.init(
 }
 );
 CancellationReason.hasMany(Booking);
-// Synchronize the model with the database
-CancellationReason.sync({ force: false }).then(() => {
-  console.log('CancellationReason model synchronized with the database.');
-});
+
 
 module.exports = CancellationReason;

@@ -31,9 +31,4 @@ PlayerSkill.init(
 }
 );
 
-// Synchronize the model with the database
-PlayerSkill.sync({ alter:true }).then(() => {
-  console.log('PlayerSkill model synchronized with the database.');
-});
-
 module.exports = PlayerSkill;

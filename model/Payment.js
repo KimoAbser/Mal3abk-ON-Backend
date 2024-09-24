@@ -37,9 +37,6 @@ Payment.init(
 }
 );
 
-// Synchronize the model with the database
-Payment.sync({ force: false }).then(() => {
-  console.log('Payment model synchronized with the database.');
-});
+
 
 module.exports = Payment;

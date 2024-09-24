@@ -26,9 +26,5 @@ Skill.init(
 }
 );
 
-// Synchronize the model with the database
-Skill.sync({ alter:true}).then(() => {
-  console.log('Skill model synchronized with the database.');
-});
 
 module.exports = Skill;

@@ -41,9 +41,5 @@ PlaygroundLocation.init(
 }
 );
 
-// Synchronize the model with the database
-PlaygroundLocation.sync({ force: false }).then(() => {
-  console.log('PlaygroundLocation model synchronized with the database.');
-});
 
 module.exports = PlaygroundLocation;

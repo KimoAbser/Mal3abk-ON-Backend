@@ -33,9 +33,5 @@ Government.init(
 Government.hasMany(City);
 Government.belongsToMany(Playground,{through:PlaygroundLocation});
 
-// Synchronize the model with the database
-Government.sync({ force: false }).then(() => {
-  console.log('Government model synchronized with the database.');
-});
 
 module.exports = Government;

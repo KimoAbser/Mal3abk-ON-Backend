@@ -3,10 +3,159 @@ const bodyParser = require('body-parser');
 const app = express();
 require('dotenv').config();
 
+// Synchronize the model with the database
+User.sync({ alter: true }).then(() => {
+  console.log('User model synchronized with the database.');
+});
+
+// Synchronize the model with the database
+Bank.sync({ alter: true }).then(() => {
+  console.log('Bank model synchronized with the database.');
+});
+
+// Synchronize the model with the database
+Card.sync({ alter: true }).then(() => {
+  console.log('Card model synchronized with the database.');
+});
+
+// Synchronize the model with the database
+CardType.sync({ alter: true }).then(() => {
+  console.log('CardType model synchronized with the database.');
+});
+
+
+// Synchronize the model with the database
+AddMethod.sync({ alter: true }).then(() => {
+  console.log('AddMethod model synchronized with the database.');
+});
+
+
+// Synchronize the model with the database
+Payment.sync({ alter: true }).then(() => {
+  console.log('Payment model synchronized with the database.');
+});
+
+
+// Synchronize the model with the database
+PaymentMethod.sync({ alter: true }).then(() => {
+  console.log('PaymentMethod model synchronized with the database.');
+});
+
+// Synchronize the model with the database
+Skill.sync({ alter: true }).then(() => {
+  console.log('Skill model synchronized with the database.');
+});
+
+
+// Synchronize the model with the database
+PlayerSkill.sync({ alter: true }).then(() => {
+  console.log('PlayerSkill model synchronized with the database.');
+});
+
+
+// Synchronize the model with the database
+PlaygroundLocation.sync({ alter: true }).then(() => {
+  console.log('PlaygroundLocation model synchronized with the database.');
+});
+
+
+// Synchronize the model with the database
+PlaygroundPicture.sync({ alter: true }).then(() => {
+  console.log('PlayGroundPicture model synchronized with the database.');
+});
+
+// Synchronize the model with the database
+Owner.sync({ alter: true }).then(() => {
+  console.log('Owner model synchronized with the database.');
+});
+
+
+// Synchronize the model with the database
+GroundType.sync({ alter: true }).then(() => {
+  console.log('GroundType model synchronized with the database.');
+});
+
+// Synchronize the model with the database
+City.sync({ alter: true }).then(() => {
+  console.log('City model synchronized with the database.');
+});
+
+// Synchronize the model with the database
+Government.sync({ alter: true }).then(() => {
+  console.log('Government model synchronized with the database.');
+});
+
+
+// Synchronize the model with the database
+BallType.sync({ alter: true }).then(() => {
+  console.log('BallType model synchronized with the database.');
+});
+
+
+
+
+
+// Synchronize the model with the database
+Playground.sync({ alter: true }).then(() => {
+  console.log('PlayGround model synchronized with the database.');
+});
+
+
+
+// Synchronize the model with the database
+Position.sync({ alter: true }).then(() => {
+  console.log('Position model synchronized with the database.');
+});
+
+
+// Synchronize the model with the database
+PlayerPosition.sync({ alter: true }).then(() => {
+  console.log('PlayerPosition model synchronized with the database.');
+});
+
+
+
+// Synchronize the model with the database
+PlayerLocation.sync({ alter: true }).then(() => {
+  console.log('PlayerLocation model synchronized with the database.');
+});
+
+
+// Synchronize the model with the database
+UserFavoritePlayground.sync({ alter: true }).then(() => {
+  console.log('UserFavoritePlayground model synchronized with the database.');
+});
+
+
+
+// Synchronize the model with the database
+Report.sync({ alter: true }).then(() => {
+  console.log('Report model synchronized with the database.');
+});
+
+// Synchronize the model with the database
+Booking.sync({ force: false }).then(() => {
+  console.log('Booking model synchronized with the database.');
+});
+
+// Synchronize the model with the database
+CancellationReason.sync({ alter: true }).then(() => {
+  console.log('CancellationReason model synchronized with the database.');
+});
+
+
+JoinBooking.sync({ alter: true }).then(() => {
+  console.log('JoinBooking model synchronized with the database.');
+});
+
+
+
+
+
 
 app.use(bodyParser.json());
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
   res.status(200).json('Welcome To Mal3abk On Api.. 😉')
 })
 //USER
@@ -196,7 +345,7 @@ app.use('/userFavoritePlayground', userFavoritePlayground); // Example URL: http
 
 
 // Start the Express.js server
-const port = process.env.PORT  || 3000
+const port = process.env.PORT || 3000
 app.listen(port, () => {
-  console.log('Server is running on port' ,port);
+  console.log('Server is running on port', port);
 });

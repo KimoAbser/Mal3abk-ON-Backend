@@ -33,9 +33,5 @@ PlayerPosition.init(
 }
 );
 
-// Synchronize the model with the database
-PlayerPosition.sync({ force: false }).then(() => {
-  console.log('PlayerPosition model synchronized with the database.');
-});
 
 module.exports = PlayerPosition;
