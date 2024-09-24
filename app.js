@@ -123,10 +123,10 @@ app.use('/cardType', cardType); // Example URL: http://localhost:3000/cardType
 
 //City
 // Routes
-const City = require('./route/City'); // Import your City routes
+const city = require('./route/City'); // Import your City routes
 
 // Use the City routes
-app.use('/city', City); // Example URL: http://localhost:3000/city
+app.use('/city', city); // Example URL: http://localhost:3000/city
 
 //Governments
 // Routes
@@ -238,7 +238,7 @@ app.use('/playgroundLocation', playgroundLocation); // Example URL: http://local
 const search = require('./route/Search'); // Import your PlaygroundLocation routes
 
 // Use the PlaygroundLocation routes
-app.use('/playgroundLocation', playgroundLocation); // Example URL: http://localhost:3000/playgroundLocation
+app.use('/search', search); // Example URL: http://localhost:3000/playgroundLocation
 
 
 //UserFavoritePlayground
