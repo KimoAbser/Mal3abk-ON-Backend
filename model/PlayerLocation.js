@@ -42,7 +42,7 @@ PlayerLocation.init(
 );
 
 // Synchronize the model with the database
-PlayerLocation.sync({ force: false }).then(() => {
+PlayerLocation.sync({ alter:true}).then(() => {
   console.log('PlayerLocation model synchronized with the database.');
 });
 
