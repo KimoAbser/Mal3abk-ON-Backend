@@ -30,10 +30,10 @@ const Booking = require('./model/Booking');
 
 // Synchronize model with the database
 User.sync({ force: true }).then(() => console.log('User model synchronized.'));
-Payment.sync({ force: true }).then(() => console.log('Payment model synchronized.'));
 PaymentMethod.sync({ force: true }).then(() => console.log('PaymentMethod model synchronized.'));
-CardType.sync({ force: true }).then(() => console.log('CardType model synchronized.'));
 Card.sync({ force: true }).then(() => console.log('Card model synchronized.'));
+Payment.sync({ force: true }).then(() => console.log('Payment model synchronized.'));
+CardType.sync({ force: true }).then(() => console.log('CardType model synchronized.'));
 Bank.sync({ force: true }).then(() => console.log('Bank model synchronized.'));
 AddMethod.sync({ force: true }).then(() => console.log('AddMethod model synchronized.'));
 Skill.sync({ force: true }).then(() => console.log('Skill model synchronized.'));
