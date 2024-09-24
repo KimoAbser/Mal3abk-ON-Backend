@@ -52,7 +52,7 @@ PlayerLocation.sync({ alter: true }).then(() => console.log('PlayerLocation mode
 UserFavoritePlayground.sync({ alter: true }).then(() => console.log('UserFavoritePlayground model synchronized.'));
 Report.sync({ alter: true }).then(() => console.log('Report model synchronized.'));
 CancellationReason.sync({ alter: true }).then(() => console.log('CancellationReason model synchronized.'));
-JoinBooking.sync({ alter: true }).then(() => console.log('JoinBooking model synchronized.'));
+JoinBooking.sync({ force: true }).then(() => console.log('JoinBooking model synchronized.'));
 Booking.sync({ alter: true }).then(() => console.log('Booking model synchronized.'));
 
 
