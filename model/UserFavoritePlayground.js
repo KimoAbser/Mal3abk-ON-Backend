@@ -30,7 +30,7 @@ UserFavoritePlayground.init(
 );
 // UserFavoritePlayground.hasMany(Playground);
 // Synchronize the model with the database
-UserFavoritePlayground.sync({ force: false }).then(() => {
+UserFavoritePlayground.sync({ alter:true }).then(() => {
   console.log('UserFavoritePlayground model synchronized with the database.');
 });
 
