@@ -2,45 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 require('dotenv').config();
-// Import your models
-const User = require('./model/User');
-const PlayerLocation = require('./model/PlayerLocation');
-const PlayerPosition = require('./model/PlayerPosition');
-const PlayerSkill = require('./model/PlayerSkill');
-const Skill = require('./model/Skills');
 
-
-const Playground = require('./model/Playground');
-const UserFavoritePlayground = require('./model/UserFavoritePlayground');
-const JoinBooking = require('./model/JoinBooking');
-const AddMethod = require('./model/AddMethod');
-
-// Function to synchronize all models
-async function syncModels() {
-    try {
-        // Use Promise.all to synchronize models in parallel
-        await Promise.all([
-            User.sync({ force: true }),
-            PlayerLocation.sync({ force: true }),
-            PlayerPosition.sync({ force: true }),
-            Skill.sync({ force: true }),
-            PlayerSkill.sync({ force: true }),
-            AddMethod.sync({ force: true }),
-            Playground.sync({ force: true }),
-            UserFavoritePlayground.sync({ force: true }),
-            JoinBooking.sync({ force: true }),
-            
-            
-        ]);
-
-        console.log('All models synchronized with the database.');
-    } catch (err) {
-        console.error('Error synchronizing models:', err);
-    }
-}
-
-// Call the function to sync models
-syncModels();
 
 app.use(bodyParser.json());
 
