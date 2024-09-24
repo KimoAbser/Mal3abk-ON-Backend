@@ -1,6 +1,6 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../sequelize'); // Import the Sequelize instance
-const Booking = require('./Booking');
+
 
 class CancellationReason extends Model { }
 
@@ -25,6 +25,7 @@ CancellationReason.init(
 
 }
 );
+const Booking = require('./Booking');
 CancellationReason.hasMany(Booking);
 
 

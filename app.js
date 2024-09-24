@@ -25,8 +25,8 @@ const PlayerLocation = require('./model/PlayerLocation');
 const UserFavoritePlayground = require('./model/UserFavoritePlayground');
 const Report = require('./model/Report');
 const CancellationReason = require('./model/CancellationReason');
-const Booking = require('./model/Booking');
 const JoinBooking = require('./model/JoinBooking');
+const Booking = require('./model/Booking');
 
 // Synchronize model with the database
 User.sync({ alter: true }).then(() => console.log('User model synchronized.'));
@@ -52,8 +52,8 @@ PlayerLocation.sync({ alter: true }).then(() => console.log('PlayerLocation mode
 UserFavoritePlayground.sync({ alter: true }).then(() => console.log('UserFavoritePlayground model synchronized.'));
 Report.sync({ alter: true }).then(() => console.log('Report model synchronized.'));
 CancellationReason.sync({ alter: true }).then(() => console.log('CancellationReason model synchronized.'));
-Booking.sync({ alter: true }).then(() => console.log('Booking model synchronized.'));
 JoinBooking.sync({ alter: true }).then(() => console.log('JoinBooking model synchronized.'));
+Booking.sync({ alter: true }).then(() => console.log('Booking model synchronized.'));
 
 
 
