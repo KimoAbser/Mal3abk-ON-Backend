@@ -31,7 +31,7 @@ const JoinBooking = require('./model/JoinBooking');
 // Synchronize model with the database
 User.sync({ alter: true }).then(() => console.log('User model synchronized.'));
 Bank.sync({ alter: true }).then(() => console.log('Bank model synchronized.'));
-Card.sync({ alter: true }).then(() => console.log('Card model synchronized.'));
+Card.sync({ force: true }).then(() => console.log('Card model synchronized.'));
 CardType.sync({ alter: true }).then(() => console.log('CardType model synchronized.'));
 AddMethod.sync({ alter: true }).then(() => console.log('AddMethod model synchronized.'));
 Payment.sync({ alter: true }).then(() => console.log('Payment model synchronized.'));
